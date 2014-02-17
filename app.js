@@ -99,9 +99,11 @@ backend.on('connection', function(socket) {
 var io = backboneio.listen(
     server,
     {entities: backend},
-    {static: false}
+    {
+        static: false,
+        'log level': 2
+    }
 );
-io.set('log level',2);
 
 // Send updates on the database to the clients
 
